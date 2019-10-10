@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itzap.elasticsearch</groupId>
+    <artifactId>itzap-elasticsearch</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.itzap</groupId>
+        <artifactId>itzap-all</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+
+    <properties>
+        <elasticsearch-transport.version>7.3.1</elasticsearch-transport.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.itzap.common</groupId>
+            <artifactId>itzap-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.itzap.data</groupId>
+            <artifactId>itzap-data-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.itzap.rxjava</groupId>
+            <artifactId>itzap-rxjava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.itzap.http</groupId>
+            <artifactId>itzap-http</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>${elasticsearch-transport.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>${elasticsearch-transport.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
+            <version>${elasticsearch-transport.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.itzap.data</groupId>
+            <artifactId>itzap-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>1.8.0-beta4</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.11.1</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
