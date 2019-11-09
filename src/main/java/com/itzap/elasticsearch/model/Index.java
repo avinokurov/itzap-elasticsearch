@@ -1,39 +1,42 @@
 package com.itzap.elasticsearch.model;
 
 import com.itzap.common.BuilderInterface;
+import com.itzap.common.Immutable;
 import com.itzap.common.Named;
 
 import java.util.List;
 
-public class Index implements Named {
-    private final String name;
-    private final List<IndexDocument> documents;
+public class Index implements Named, Immutable {
+    private static class State implements Immutable.State {
+        private String name;
+        private List<IndexDocument> documents;
+    }
+
+    private final State state;
 
     private Index(Builder builder) {
-        this.name = builder.name;
-        this.documents = builder.documents;
+        this.state = builder.state;
     }
 
     @Override
     public String getName() {
-        return this.name;
+        return this.state.name;
     }
 
     public List<IndexDocument> getDocuments() {
-        return documents;
+        return state.documents;
     }
 
     public static class Builder implements BuilderInterface<Index> {
-        private String name;
-        private List<IndexDocument> documents;
+        private final State state = new State();
 
         public Builder setName(String name) {
-            this.name = name;
+            this.state.name = name;
             return this;
         }
 
         public Builder setDocuments(List<IndexDocument> documents) {
-            this.documents = documents;
+            this.state.documents = documents;
             return this;
         }
 
